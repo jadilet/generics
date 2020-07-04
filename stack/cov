@@ -1,0 +1,9 @@
+mode: set
+github.com/jadilet/generics/stack/stack.go:7.40,9.2 1 1
+github.com/jadilet/generics/stack/stack.go:12.35,13.17 1 1
+github.com/jadilet/generics/stack/stack.go:17.2,17.24 1 1
+github.com/jadilet/generics/stack/stack.go:13.17,15.3 1 1
+github.com/jadilet/generics/stack/stack.go:21.35,22.17 1 1
+github.com/jadilet/generics/stack/stack.go:26.2,30.12 3 1
+github.com/jadilet/generics/stack/stack.go:22.17,24.3 1 1
+github.com/jadilet/generics/stack/stack.go:34.32,36.2 1 1
