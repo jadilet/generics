@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/jadilet/generics/bst"
+	"github.com/jadilet/generics/graph"
 	"github.com/jadilet/generics/heap"
 	"github.com/jadilet/generics/queue"
 	"github.com/jadilet/generics/stack"
@@ -26,6 +27,7 @@ func main() {
 	fmt.Println(q.Pop())
 	fmt.Println(q.Pop())
 
+	// BST
 	bst := bst.BST{}
 
 	bst.Insert(10)
@@ -43,6 +45,7 @@ func main() {
 	bst.Bfs()
 	fmt.Println("---")
 
+	// MinHeap
 	h := heap.MinHeap{}
 
 	h.Insert(10)
@@ -56,6 +59,7 @@ func main() {
 	fmt.Println(h.ExtractMin()) // 10
 	fmt.Println(h.ExtractMin())
 
+	// MaxHeap
 	m := heap.MaxHeap{}
 
 	m.Insert(10)
@@ -67,5 +71,18 @@ func main() {
 	fmt.Println(m.ExtractMax())
 	fmt.Println(m.ExtractMax())
 	fmt.Println(m.ExtractMax())
+	fmt.Println()
+
+	// Graph
+	graph := &graph.Graph{}
+
+	graph.AddEdge(0, 1)
+	graph.AddEdge(0, 2)
+	graph.AddEdge(0, 3)
+	graph.AddEdge(1, 2)
+	graph.AddEdge(2, 4)
+	
+	fmt.Println(graph.Dfs(0))
+	fmt.Println(graph.Bfs(0))
 
 }
