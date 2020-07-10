@@ -43,17 +43,29 @@ func main() {
 	bst.Bfs()
 	fmt.Println("---")
 
+	h := heap.MinHeap{}
 
-	heap := heap.MinHeap{}
+	h.Insert(10)
+	h.Insert(5)
+	h.Insert(9)
+	h.Insert(2)
 
-	heap.Insert(10)
-	heap.Insert(5)
-	heap.Insert(9)
-	heap.Insert(2)
+	fmt.Println(h.ExtractMin()) // 2
+	fmt.Println(h.ExtractMin()) // 5
+	fmt.Println(h.ExtractMin()) // 9
+	fmt.Println(h.ExtractMin()) // 10
+	fmt.Println(h.ExtractMin())
 
-	fmt.Println(heap.ExtractMin()) // 2 
-	fmt.Println(heap.ExtractMin()) // 5
-	fmt.Println(heap.ExtractMin()) // 9
-	fmt.Println(heap.ExtractMin()) // 10
-	fmt.Println(heap.ExtractMin())
+	m := heap.MaxHeap{}
+
+	m.Insert(10)
+	m.Insert(32)
+	m.Insert(50)
+	m.Insert(100)
+
+	fmt.Println(m.ExtractMax())
+	fmt.Println(m.ExtractMax())
+	fmt.Println(m.ExtractMax())
+	fmt.Println(m.ExtractMax())
+
 }

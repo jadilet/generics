@@ -84,7 +84,6 @@ func TestIsEmpty(t *testing.T) {
 	}
 }
 
-
 func TestExtractMin(t *testing.T) {
 	heap := &MinHeap{}
 
