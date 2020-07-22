@@ -13,13 +13,13 @@ func TestAddEdge(t *testing.T) {
    //      1---2  3
    //          |
    //          4
-	graph.AddEdge(0, 1)
-	graph.AddEdge(0, 2)
-	graph.AddEdge(0, 3)
-	graph.AddEdge(2, 4)
+	graph.AddEdge(0, Vertex{Weight: 1})
+	graph.AddEdge(0, Vertex{Weight: 2})
+	graph.AddEdge(0, Vertex{Weight: 3})
+	graph.AddEdge(2, Vertex{Weight: 4})
 
 	// Edge 0
-	var expected[]interface{} = []interface{}{1,2,3}
+	expected := []Vertex{{Weight: 1},{Weight: 2},{Weight: 3}}
 
 	if !reflect.DeepEqual(expected, (*graph)[0]) {
 		t.Errorf("AddEdge incorrect graph vertices, got: %v, expected: %v", 
@@ -35,10 +35,10 @@ func TestDfs(t *testing.T) {
    //      1---2  3
    //          |
    //          4
-	graph.AddEdge(0, 1)
-	graph.AddEdge(0, 2)
-	graph.AddEdge(0, 3)
-	graph.AddEdge(2, 4)
+	graph.AddEdge(0, Vertex{Weight: 1, Name: 1})
+	graph.AddEdge(0, Vertex{Weight: 2, Name: 2})
+	graph.AddEdge(0, Vertex{Weight: 3, Name: 3})
+	graph.AddEdge(2, Vertex{Weight: 4, Name: 4})
 	
 	got := graph.Dfs(0)
 	var expected[]interface{} = []interface{}{0, 3, 2, 4, 1}
@@ -58,10 +58,10 @@ func TestBfs(t *testing.T) {
    //      1---2  3
    //          |
    //          4
-	graph.AddEdge(0, 1)
-	graph.AddEdge(0, 2)
-	graph.AddEdge(0, 3)
-	graph.AddEdge(2, 4)
+	graph.AddEdge(0, Vertex{Weight: 1, Name: 1})
+	graph.AddEdge(0, Vertex{Weight: 2, Name: 2})
+	graph.AddEdge(0, Vertex{Weight: 3, Name: 3})
+	graph.AddEdge(2, Vertex{Weight: 4, Name: 4})
 	
 	got := graph.Bfs(0)
 	

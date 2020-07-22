@@ -73,16 +73,22 @@ func main() {
 	fmt.Println(m.ExtractMax())
 	fmt.Println()
 
-	// Graph
-	graph := &graph.Graph{}
+	// Graph implementation adjacency list
+	gr := graph.Graph{
+		"S": []graph.Vertex{{Name: "A", Weight: 7}, {Name: "B", Weight: 2}, {Name: "C", Weight: 3}},
+		"A": []graph.Vertex{{Name: "D", Weight: 4}, {Name: "B", Weight: 3}, {Name: "S", Weight: 7}},
+		"C": []graph.Vertex{{Name: "S", Weight: 3}, {Name: "L", Weight: 2}},
+		"D": []graph.Vertex{{Name: "A", Weight: 4}, {Name: "B", Weight: 4}, {Name: "F", Weight: 5}},
+		"F": []graph.Vertex{{Name: "H", Weight: 3}, {Name: "D", Weight: 5}},
+		"H": []graph.Vertex{{Name: "F", Weight: 3}, {Name: "B", Weight: 1}, {Name: "G", Weight: 2}},
+		"I": []graph.Vertex{{Name: "L", Weight: 4}, {Name: "J", Weight: 6}, {Name: "K", Weight: 4}},
+		"J": []graph.Vertex{{Name: "K", Weight: 4}, {Name: "I", Weight: 6}, {Name: "L", Weight: 4}},
+		"L": []graph.Vertex{{Name: "C", Weight: 2}, {Name: "I", Weight: 4}, {Name: "J", Weight: 4}},
+		"K": []graph.Vertex{{Name: "I", Weight: 4}, {Name: "J", Weight: 4}, {Name: "E", Weight: 5}},
+		"E": []graph.Vertex{{Name: "G", Weight: 2}, {Name: "K", Weight: 5}},
+	}
 
-	graph.AddEdge(0, 1)
-	graph.AddEdge(0, 2)
-	graph.AddEdge(0, 3)
-	graph.AddEdge(1, 2)
-	graph.AddEdge(2, 4)
-	
-	fmt.Println(graph.Dfs(0))
-	fmt.Println(graph.Bfs(0))
+	fmt.Println(gr.Dfs("S"))
+	fmt.Println(gr.Bfs("S"))
 
 }
